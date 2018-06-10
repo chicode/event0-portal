@@ -10,12 +10,20 @@ import './styles/index.global.scss'
 export const history = createHistory()
 
 export const client = new ApolloClient({
-  uri: 'http://localhost:3000/graphql',
+  uri:
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:3000/graphql'
+      : 'https://us-central1-event0-portal.cloudfunctions.net/server/graphql',
   request: async (operation) => {
     const token = localStorage.getItem('token')
     operation.setContext({
+      mode: 'cors',
       headers: {
+        'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
+        'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
         Authorization: token ? `Bearer ${token}` : null,
+        'Access-Control-Allow-Origin': '*',
+        'Retry-After': 3600,
       },
     })
   },

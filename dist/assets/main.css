@@ -1,0 +1,162 @@
+.Badge__main__104zj {
+  width: 400px;
+  margin-top: 10vh; }
+  @media (max-width: 1300px) {
+    .Badge__main__104zj {
+      width: 50vw; } }
+
+.Vote__main__yHJ_D {
+  align-items: center; }
+  .Vote__main__yHJ_D * {
+    margin: 5px; }
+  .Vote__main__yHJ_D img {
+    width: 40px; }
+
+.Project__project__LMwuO {
+  background: #e5e5e5;
+  padding: 30px;
+  margin: 20px; }
+  .Project__project__LMwuO p {
+    font-size: 30px; }
+  .Project__project__LMwuO button {
+    margin: 20px; }
+
+.index__project__25Iph {
+  margin: 10px 0; }
+
+.index__title__2VXnU {
+  margin-bottom: 20px; }
+  .index__title__2VXnU * {
+    margin: 0 20px; }
+
+.index__toolbar__A5rcX {
+  margin: 0 30px; }
+  .index__toolbar__A5rcX * {
+    user-select: none; }
+
+.index__nested-toolbar__hK46l {
+  align-items: center; }
+  .index__nested-toolbar__hK46l > * {
+    margin: 0 30px; }
+
+.index__categories__1x3DB {
+  justify-content: space-between;
+  align-items: center;
+  background: #e5e5e5; }
+  .index__categories__1x3DB * {
+    padding: 10px;
+    height: 80px; }
+
+.index__home__xjpu3 {
+  justify-content: 10%;
+  padding: 20px;
+  margin-left: auto; }
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body * {
+  margin: 0; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+button,
+input,
+select {
+  border: 0; }
+
+button:focus,
+input:focus,
+select:focus {
+  outline: 0; }
+
+p {
+  cursor: default; }
+
+button,
+img {
+  display: block; }
+
+button img {
+  margin: auto; }
+
+button * {
+  user-select: none;
+  user-drag: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none; }
+
+body,
+button,
+input {
+  font-family: Source Code Pro;
+  font-weight: bold; }
+
+p {
+  font-size: 50px; }
+
+.vertical-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.center {
+  margin-left: auto;
+  margin-right: auto; }
+
+.row {
+  display: flex; }
+
+.outer {
+  height: 100%; }
+
+.error {
+  border: 6px solid black;
+  border-radius: 10px;
+  border-color: #ff5050;
+  font-size: 50px;
+  display: inline-block; }
+
+button,
+input {
+  border: 6px solid black;
+  border-radius: 10px;
+  font-size: 50px; }
+
+button {
+  background: #e85a5a;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+button:disabled {
+  background: #e5e5e5;
+  color: black; }
+
+input {
+  height: 100%;
+  width: 400px; }
+
+.highlight {
+  border-radius: 10px; }
+  .highlight.color1 {
+    background: #b9a4db; }
+  .highlight.color2 {
+    background: #e9cf8b; }
+
+.seperator {
+  height: 6px;
+  background: black;
+  margin: 20px; }
+
+.no-select {
+  user-select: none; }
+

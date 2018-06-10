@@ -104,6 +104,8 @@ export default class Voting extends React.Component {
                 description
                 author {
                   username
+                  id
+                  email
                 }
                 funVotes
                 techVotes

@@ -33,6 +33,7 @@ export default class Home extends React.Component {
             >
               talk on slack
             </button>
+            <a href="http://18.221.89.141">ctf</a>
             <button onClick={logout}>logout</button>
           </Center>
         )}

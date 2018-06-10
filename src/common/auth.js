@@ -9,10 +9,11 @@ console.log(process.env.NODE_ENV)
 const REDIRECT =
   process.env.NODE_ENV === 'development'
     ? 'http://localhost:8080/oauth2callback'
-    : 'https://portal.event0.org/oauth2callback'
-console.log(REDIRECT)
-const DOMAINS = ['cps.edu', 'chicode.net']
-const OTHER_EMAILS = ['antonoutkine@gmail.com']
+    : // : 'https://portal.event0.org/oauth2callback'
+      'https://condescending-mcclintock-6f059f.netlify.com/oauth2callback'
+// console.log(REDIRECT)
+// const DOMAINS = ['cps.edu', 'chicode.net']
+// const OTHER_EMAILS = ['antonoutkine@gmail.com']
 
 export function login() {
   cors('GET', 'https://accounts.google.com/o/oauth2/v2/auth', {
@@ -32,11 +33,11 @@ export async function validate(token) {
     return
   }
 
-  if (!DOMAINS.includes(auth.email.split('@')[1]) && !OTHER_EMAILS.includes(auth.email)) {
-    window.error = 'Make sure to use your cps email.'
-    history.replace(LOGIN_URI)
-    return
-  }
+  // if (!DOMAINS.includes(auth.email.split('@')[1]) && !OTHER_EMAILS.includes(auth.email)) {
+  //   window.error = 'Make sure to use your cps email.'
+  //   history.replace(LOGIN_URI)
+  //   return
+  // }
 
   window.localStorage.setItem('token', token)
   window.localStorage.setItem('exp', auth.exp)

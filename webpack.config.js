@@ -11,7 +11,7 @@ module.exports = {
     ? ['@babel/polyfill', 'react-hot-loader/patch', './src/index.js']
     : ['@babel/polyfill', './src/index.js'],
   output: {
-    path: path.resolve('dist'),
+    path: path.resolve('dist/assets'),
     filename: 'bundle.js',
     publicPath: '/assets/',
   },
