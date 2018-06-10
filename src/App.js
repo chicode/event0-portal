@@ -9,21 +9,19 @@ import './styles/index.global.scss'
 
 export const history = createHistory()
 
+export const DEV_SERVER = 'http://localhost:3000'
+export const PROD_SERVER = 'https://us-central1-event0-portal.cloudfunctions.net/server'
+export const DEV_FRONT = 'http://localhost:8080'
+export const PROD_FRONT = 'https://condescending-mcclintock-6f059f.netlify.com'
+
 export const client = new ApolloClient({
-  uri:
-    process.env.NODE_ENV === 'development'
-      ? 'http://localhost:3000/graphql'
-      : 'https://us-central1-event0-portal.cloudfunctions.net/server/graphql',
+  uri: process.env.NODE_ENV === 'development' ? DEV_SERVER + '/graphql' : PROD_SERVER + '/graphql',
   request: async (operation) => {
     const token = localStorage.getItem('token')
     operation.setContext({
-      mode: 'cors',
       headers: {
-        'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
-        'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
         Authorization: token ? `Bearer ${token}` : null,
         'Access-Control-Allow-Origin': '*',
-        'Retry-After': 3600,
       },
     })
   },

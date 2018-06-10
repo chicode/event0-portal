@@ -19,7 +19,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.js$/,
         use: 'babel-loader',
         exclude: /node_modules/,
       },
@@ -51,18 +51,10 @@ module.exports = {
           'sass-loader',
         ],
       },
-      // {
-      //   test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
-      //   use: [
-      //     {
-      //       loader: 'url-loader',
-      //       options: {
-      //         limit: 1000,
-      //         name: 'assets/[hash].[ext]',
-      //       },
-      //     },
-      //   ],
-      // },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
   stats: 'minimal',

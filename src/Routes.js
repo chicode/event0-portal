@@ -5,8 +5,8 @@ import { isAuthenticated, validate } from 'common/auth'
 import * as scenes from 'scenes'
 
 export const LOGIN_URI = '/login'
-export const HOME_URI = '/'
 export const SIGNUP_URI = '/signup'
+export const HOME_URI = '/'
 
 const routes = [
   {
@@ -16,28 +16,13 @@ const routes = [
   },
   {
     path: SIGNUP_URI,
-    component: scenes.Create,
-    authenticated: true,
-  },
-  {
-    path: '/voting',
-    component: scenes.Voting,
-    authenticated: true,
-  },
-  {
-    path: '/new-project',
-    component: scenes.NewProject,
-    authenticated: true,
-  },
-  {
-    path: '/edit-project',
-    component: scenes.EditProject,
+    component: scenes.Signup,
     authenticated: true,
   },
   {
     path: HOME_URI,
     component: scenes.Home,
-    authenticated: true,
+    authenticated: false,
   },
 ]
 
@@ -47,10 +32,6 @@ function protectedRoute(Component, authenticated) {
     if ((authenticated && auth) || (!authenticated && !auth)) {
       return <Component {...props} />
     } else {
-      if (props.staticContext) {
-        props.staticContext.status = 302
-      }
-      console.log('redirecting to' + authenticated ? 'login' : 'home')
       return <Redirect to={authenticated ? LOGIN_URI : HOME_URI} />
     }
   }
